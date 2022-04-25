@@ -1,0 +1,52 @@
+:root {
+    --main-gradient-color: #6de4de;
+    --sec-gradient-color: #ffeee4;
+    --third-gradient-color: #9ec1df;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.screen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top right, var(--main-gradient-color), var(--third-gradient-color), var(--sec-gradient-color));
+    padding: 40px 40px;
+}
+.right-side {
+    flex: 3;
+}
+.logo img {
+    width: 30px;
+    height: auto;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    height: 560px;
+}
+.text-bar input{
+    text-align: center;
+    width: 565px;
+    height: 55px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.buttons{
+    display: flex;
+}
+
+.left-side {
+    flex: 1;
+}
+
+
+
+
