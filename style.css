@@ -4,10 +4,12 @@
     --third-gradient-color: #9ec1df;
 }
 *{
+    font-family: sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 .screen {
     display: flex;
     width: 100vw;
@@ -15,6 +17,7 @@
     background-image: linear-gradient(to top right, var(--main-gradient-color), var(--third-gradient-color), var(--sec-gradient-color));
     padding: 40px 40px;
 }
+
 .right-side {
     flex: 3;
 }
@@ -27,8 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
-    height: 560px;
+    height: calc(100vh - 100px);
 }
 .text-bar input{
     text-align: center;
@@ -37,14 +39,66 @@
     border-radius: 50px;
     outline: none;
     border: none;
+    font-size: 20px;
+    margin-bottom: 40px;
 }
-
+.text-bar input::placeholder {
+    font-size: 20px;
+}
 .buttons{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    width: 330px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,0.65);
+    cursor: pointer;
+}
+.button:hover {
+    background-color: rgba(255,255,255,1);
 }
 
 .left-side {
-    flex: 1;
+    width: 400px;
+    background-color: #ffeee4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.left-image img {
+    margin-top: -60px;
+    width: calc(100% + 40px);
+    height: auto;
+}
+.message {
+    padding: 0px 18px;
+}
+.msg {
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--third-gradient-color);
+    margin-bottom: 10px;
+}
+.message p {
+    text-align: center;
+  
 }
 
 
