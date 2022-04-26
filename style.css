@@ -220,3 +220,21 @@ strong {
     }
 
 }
+@media(max-height: 580px){
+    .left-side {
+        height: 80px;
+        margin-top: 20px;
+    }
+    .text-area {
+        height: 80px;
+   
+    }
+    .text-area textarea {
+        padding-top: 0px;
+        height: 80px;
+    
+    }
+    .message {
+        display: none;
+    }
+}
