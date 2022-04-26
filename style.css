@@ -215,5 +215,8 @@ strong {
     .button {
         width: 120px;
     }
+    .msg {
+        font-size: 10px;
+    }
 
 }
