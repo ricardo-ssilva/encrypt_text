@@ -43,9 +43,8 @@ function changeLeftContent () {
 }
 
 function checkText(text) {
-    const check = text.search(/^[a-z]+$/) //validação
+    const check = text.search(/^[a-z ]+$/) //validação regex
     console.log(check)
-
     if(text != '') {
         if(check == -1){
             alert('Erro: Valido somente caracteres minúsculos e sem acentos')
@@ -60,9 +59,5 @@ function checkText(text) {
         alert('Erro: Nenhuma mensagem foi encontrada')
         document.querySelector('.left-content').style.display = 'block'
         document.querySelector('.text-area').style.display = 'none'
-    }
-
-  
-
- 
+    } 
 }
