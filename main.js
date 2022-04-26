@@ -47,11 +47,11 @@ function checkText(text) {
     console.log(check)
     if(text != '') {
         if(check == -1){
-            alert('Erro: Valido somente caracteres minúsculos e sem acentos')
+            alert('Erro: Somente caracteres minúsculos e sem acentos são válidos')
                document.querySelector('.left-content').style.display = 'block'
                document.querySelector('.text-area').style.display = 'none'
                text = ''
-               document.querySelector('.msg').innerHTML = 'Valido somente caracteres minúsculos e sem acentos'
+               document.querySelector('.msg').innerHTML = 'Somente caracteres minúsculos e sem acentos são válidos'
         } else {
             changeLeftContent()
         }
@@ -59,5 +59,6 @@ function checkText(text) {
         alert('Erro: Nenhuma mensagem foi encontrada')
         document.querySelector('.left-content').style.display = 'block'
         document.querySelector('.text-area').style.display = 'none'
+        document.querySelector('.msg').innerHTML = 'Nenhuma mensagem foi encontrada'
     } 
 }
