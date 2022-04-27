@@ -203,6 +203,10 @@ strong {
 @media(max-width: 580px) {
     .text-bar input {
         width: calc(100vw - 40px);
+        height: 45px;
+    }
+    .button {
+        height: 45px;
     }
 }
 @media(max-width: 320px){

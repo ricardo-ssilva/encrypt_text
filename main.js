@@ -9,11 +9,12 @@ const input = document.querySelector('.text-bar input')
 const output = document.querySelector('.text-area textarea')
 const encryptButton = button[0]
 const decryptButton = button[1]
+const copyButton = button[2]
 
 input.focus()
 encryptButton.onclick = encrypt
 decryptButton.onclick = decrypt
-
+copyButton.onclick = copyText
 
 function encrypt(){
     let text = input.value
@@ -44,9 +45,13 @@ function checkText(text) {
        errorMessage('Nenhuma mensagem foi encontrada')
     } 
 }
-
 function errorMessage (msg) {
     alert(`Erro: ${msg}`)
     changeLeftContent('block','none')
     document.querySelector('.msg').innerHTML = msg
+}
+function copyText() {
+    let copyText = output.value
+    navigator.clipboard.writeText(copyText)
+    console.log(copyText)
 }
