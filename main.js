@@ -18,47 +18,37 @@ decryptButton.onclick = decrypt
 function encrypt(){
     let text = input.value
     let encrypt = text.replace(/e/g,'enter').replace(/i/g,'imes').replace(/a/g, 'ai').replace(/o/g,'ober').replace(/u/g,'ufat')
-    // console.log(encrypt)
     output.value = encrypt
-    // console.log('input', input.value)
-    
-
-    // changeLeftContent ()
     checkText (text)
-    
 }
-
 function decrypt() {
     let text = input.value
     let decrypt = text.replace(/enter/g,'e').replace(/imes/g,'i').replace(/ai/g,"a").replace(/ober/g,'o').replace(/ufat/g,'u')
     output.value = decrypt
     changeLeftContent ()
-    
 }
-
 function changeLeftContent () {
     document.querySelector('.left-content').style.display = 'none'
     document.querySelector('.text-area').style.display = 'flex'
     document.querySelector('.text-area textarea').focus()
 }
-
 function checkText(text) {
     const check = text.search(/^[a-z ]+$/) //validação regex
-    console.log(check)
     if(text != '') {
         if(check == -1){
-            alert('Erro: Somente caracteres minúsculos e sem acentos são válidos')
-               document.querySelector('.left-content').style.display = 'block'
-               document.querySelector('.text-area').style.display = 'none'
-               text = ''
-               document.querySelector('.msg').innerHTML = 'Somente caracteres minúsculos e sem acentos são válidos'
+            errorMessage('Somente caracteres minúsculos e sem acentos são válidos')
         } else {
             changeLeftContent()
         }
     } else {
-        alert('Erro: Nenhuma mensagem foi encontrada')
-        document.querySelector('.left-content').style.display = 'block'
-        document.querySelector('.text-area').style.display = 'none'
-        document.querySelector('.msg').innerHTML = 'Nenhuma mensagem foi encontrada'
+       errorMessage('Nenhuma mensagem foi encontrada')
     } 
+}
+
+function errorMessage (msg) {
+    alert(`Erro: ${msg}`)
+    document.querySelector('.left-content').style.display = 'block'
+    document.querySelector('.text-area').style.display = 'none'
+    text = ''
+    document.querySelector('.msg').innerHTML = msg
 }
