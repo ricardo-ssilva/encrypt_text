@@ -19,17 +19,17 @@ function encrypt(){
     let text = input.value
     let encrypt = text.replace(/e/g,'enter').replace(/i/g,'imes').replace(/a/g, 'ai').replace(/o/g,'ober').replace(/u/g,'ufat')
     output.value = encrypt
-    checkText (text)
+    checkText(text)
 }
 function decrypt() {
     let text = input.value
     let decrypt = text.replace(/enter/g,'e').replace(/imes/g,'i').replace(/ai/g,"a").replace(/ober/g,'o').replace(/ufat/g,'u')
     output.value = decrypt
-    changeLeftContent ()
+    checkText(text)
 }
-function changeLeftContent () {
-    document.querySelector('.left-content').style.display = 'none'
-    document.querySelector('.text-area').style.display = 'flex'
+function changeLeftContent (display1, display2) {
+    document.querySelector('.left-content').style.display = display1
+    document.querySelector('.text-area').style.display = display2
     document.querySelector('.text-area textarea').focus()
 }
 function checkText(text) {
@@ -38,7 +38,7 @@ function checkText(text) {
         if(check == -1){
             errorMessage('Somente caracteres minúsculos e sem acentos são válidos')
         } else {
-            changeLeftContent()
+            changeLeftContent('none','flex')
         }
     } else {
        errorMessage('Nenhuma mensagem foi encontrada')
@@ -47,8 +47,6 @@ function checkText(text) {
 
 function errorMessage (msg) {
     alert(`Erro: ${msg}`)
-    document.querySelector('.left-content').style.display = 'block'
-    document.querySelector('.text-area').style.display = 'none'
-    text = ''
+    changeLeftContent('block','none')
     document.querySelector('.msg').innerHTML = msg
 }
