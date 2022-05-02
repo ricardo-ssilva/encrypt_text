@@ -29,10 +29,10 @@ function changeLeftContent (display1, display2) {
     document.querySelector('.text-area textarea').focus()
 }
 function checkText(text) {
-    const check = text.search(/^[a-z ]+$/) //validação regex
+    let check = text.search(/^[a-z ]+$/) //validação regex
     if(text != '') {
         if(check == -1){
-            errorMessage('Somente caracteres minúsculos e sem acentos são válidos')
+            errorMessage('Somente caracteres minúsculos e sem acento são válidos')
         } else {
             changeLeftContent('none','flex')
         }
